@@ -8,11 +8,11 @@ terraform {
 }
 
 provider "google" {
-  credentials = file("terraform-gcp-tutorial-365520-348915d79071.json")
+  credentials = file(var.credentials_file)
 
-  project = "terraform-gcp-tutorial-365520"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  project = var.project
+  region  = var.region
+  zone    = var.zone
 }
 
 resource "google_compute_network" "vpc_network" {
